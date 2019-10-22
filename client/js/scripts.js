@@ -71,5 +71,17 @@ var zodiacs = [
         month: "February 19 to March 20",
         description: "Pisces is symbolized by two fish swimming in opposite directions. A part of you is always trying to “swim away” or escape reality. The other part is so intuitive that you get swept up in everything going on. Your imagination is the perfect hideout when you want to escape, since Pisces is so creative. You love dancing (Pisces rules the feet), movies, poetry, and music. Your moods are mysterious and your dreams are intense. Every Pisces should have a journal by your bed, since some your best ideas will come in your sleep. Although you can feel helpless, you’re much stronger than you think. The best way for Pisces to experience your own strength is to help people in need. You have great compassion and incredible healing powers. Because it’s easy for people to make you feel guilty, Pisces should watch out for friends who use you, or make you doubt yourself. Surround yourself with good-hearted friends who have their acts together. Many people born under your sign have a “tortured soul” quality. Finding a tranquil spiritual outlet, or spending time alone, can help you get re-centered in your own power."
     }
-    ]
+];
+
+function getData() {
+    var userSearch = document.getElementById('user-search').value;
+    for(var i=0;i<zodiacs.length;i++){
+        if(zodiacs[i].name.toLowerCase() === userSearch.toLowerCase()) {
+            document.getElementById('zod-name').innerHTML = zodiacs[i].name;
+            document.getElementById('zod-date').innerHTML = zodiacs[i].month;
+            document.getElementById('zod-img').src = zodiacs[i].image;
+            document.getElementById('zod-info').innerHTML = zodiacs[i].description;
+        }
+    }
+}
     
